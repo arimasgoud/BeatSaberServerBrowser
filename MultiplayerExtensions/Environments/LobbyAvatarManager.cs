@@ -95,8 +95,4 @@ namespace MultiplayerExtensions.Environments
         }
         #endregion
     }
-
-    internal class MultiplayerLobbyAvatarController
-    {
-    }
 }

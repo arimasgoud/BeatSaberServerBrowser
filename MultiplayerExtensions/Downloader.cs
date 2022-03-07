@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using MultiplayerExtensions.Utilities;
 using System.Collections.Concurrent;
 using System.Diagnostics;
+using BeatSaverSharp.Models;
 using System.Linq;
 #nullable enable
 
