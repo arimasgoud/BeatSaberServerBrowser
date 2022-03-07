@@ -40,7 +40,9 @@
     <None Remove="UI\settings.bsml" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Accessibility" />
+    <Reference Include="Accessibility">
+      <CopyLocal>True</CopyLocal>
+    </Reference>
     <Reference Include="BeatmapCore">
       <HintPath>$(BeatSaberDir)\Beat Saber_Data\Managed\BeatmapCore.dll</HintPath>
       <Private>True</Private>
@@ -116,6 +118,8 @@
       <HintPath>$(BeatSaberDir)\Beat Saber_Data\Managed\IPA.Loader.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Xml.Serialization" />
     <Reference Include="Unity.TextMeshPro">
       <HintPath>$(BeatSaberDir)\Beat Saber_Data\Managed\Unity.TextMeshPro.dll</HintPath>
       <Private>True</Private>
@@ -166,6 +170,7 @@
       <HintPath>$(BeatSaberDir)\Beat Saber_Data\Managed\UnityEngine.VRModule.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="WindowsBase" />
     <Reference Include="Zenject">
       <HintPath>$(BeatSaberDir)\Beat Saber_Data\Managed\Zenject.dll</HintPath>
       <Private>True</Private>
@@ -229,6 +234,27 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.CodeCoverage" Version="16.11.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="1.1.6">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Net.Http" Version="2.2.22" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.11.0" />
+    <PackageReference Include="Microsoft.QualityTools.Testing.Fakes" Version="16.7.4-beta.20330.2" />
+    <PackageReference Include="Microsoft.TestPlatform.ObjectModel" Version="16.11.0" />
+    <PackageReference Include="Microsoft.TestPlatform.TestHost" Version="16.11.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="1.1.3" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink.Loader" Version="14.0.4" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration" Version="1.1.5" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Core" Version="1.1.5" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="1.1.5" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore" Version="1.1.5" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Templating" Version="1.1.5" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Utils" Version="1.1.5" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGenerators.Mvc" Version="1.1.5" />
+    <PackageReference Include="MSTest.TestAdapter" Version="2.2.7" />
+    <PackageReference Include="MSTest.TestFramework" Version="2.2.7" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3">
       <GeneratePathProperty></GeneratePathProperty>
       <Aliases>%(Aliases)</Aliases>
