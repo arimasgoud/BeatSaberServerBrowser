@@ -1,12 +1,12 @@
 ﻿using MultiplayerExtensions.Extensions;
 using MultiplayerExtensions.HarmonyPatches;
 using MultiplayerExtensions.Packets;
-using MultiplayerExtensions.Utilities;
+using MultiplayerExtensions.Utilities.Harmony;
 using Zenject;
 
 namespace MultiplayerExtensions.Installers
 {
-	class MPCoreInstaller : MonoInstaller
+    class MPCoreInstaller : MonoInstaller
 	{
 		public HarmonyPatchInfo? lobbyPlayerDataPatch;
 		public HarmonyPatchInfo? levelLoaderPatch;

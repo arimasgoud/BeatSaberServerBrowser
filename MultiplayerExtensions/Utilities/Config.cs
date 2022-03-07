@@ -1,6 +1,6 @@
 using Newtonsoft.Json;
 
-namespace MultiplayerExtensions
+namespace MultiplayerExtensions.Utilities
 {
     public class PluginConfig
     {

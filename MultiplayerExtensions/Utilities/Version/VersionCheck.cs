@@ -9,7 +9,7 @@ using System.Text.RegularExpressions;
 using System.Collections;
 using System.Globalization;
 
-namespace MultiplayerExtensions.Utilities
+namespace MultiplayerExtensions.Utilities.Version
 {
     public struct GithubVersion
     {
@@ -211,14 +211,14 @@ namespace MultiplayerExtensions.Utilities
                 public Enumerator(List<JSONNode>.Enumerator aArrayEnum)
                 {
                     type = Type.Array;
-                    m_Object = default(Dictionary<string, JSONNode>.Enumerator);
+                    m_Object = default;
                     m_Array = aArrayEnum;
                 }
                 public Enumerator(Dictionary<string, JSONNode>.Enumerator aDictEnum)
                 {
                     type = Type.Object;
                     m_Object = aDictEnum;
-                    m_Array = default(List<JSONNode>.Enumerator);
+                    m_Array = default;
                 }
                 public KeyValuePair<string, JSONNode> Current
                 {
@@ -444,7 +444,7 @@ namespace MultiplayerExtensions.Utilities
                 }
                 set
                 {
-                    Value = (value) ? "true" : "false";
+                    Value = value ? "true" : "false";
                 }
             }
 
@@ -490,7 +490,7 @@ namespace MultiplayerExtensions.Utilities
             }
             public static implicit operator string(JSONNode d)
             {
-                return (d == null) ? null : d.Value;
+                return d == null ? null : d.Value;
             }
 
             public static implicit operator JSONNode(double n)
@@ -499,7 +499,7 @@ namespace MultiplayerExtensions.Utilities
             }
             public static implicit operator double(JSONNode d)
             {
-                return (d == null) ? 0 : d.AsDouble;
+                return d == null ? 0 : d.AsDouble;
             }
 
             public static implicit operator JSONNode(float n)
@@ -508,7 +508,7 @@ namespace MultiplayerExtensions.Utilities
             }
             public static implicit operator float(JSONNode d)
             {
-                return (d == null) ? 0 : d.AsFloat;
+                return d == null ? 0 : d.AsFloat;
             }
 
             public static implicit operator JSONNode(int n)
@@ -517,7 +517,7 @@ namespace MultiplayerExtensions.Utilities
             }
             public static implicit operator int(JSONNode d)
             {
-                return (d == null) ? 0 : d.AsInt;
+                return d == null ? 0 : d.AsInt;
             }
 
             public static implicit operator JSONNode(long n)
@@ -528,7 +528,7 @@ namespace MultiplayerExtensions.Utilities
             }
             public static implicit operator long(JSONNode d)
             {
-                return (d == null) ? 0L : d.AsLong;
+                return d == null ? 0L : d.AsLong;
             }
 
             public static implicit operator JSONNode(bool b)
@@ -537,7 +537,7 @@ namespace MultiplayerExtensions.Utilities
             }
             public static implicit operator bool(JSONNode d)
             {
-                return (d == null) ? false : d.AsBool;
+                return d == null ? false : d.AsBool;
             }
 
             public static implicit operator JSONNode(KeyValuePair<string, JSONNode> aKeyValue)
@@ -616,7 +616,7 @@ namespace MultiplayerExtensions.Utilities
                             sb.Append("\\f");
                             break;
                         default:
-                            if (c < ' ' || (forceASCII && c > 127))
+                            if (c < ' ' || forceASCII && c > 127)
                             {
                                 ushort val = c;
                                 sb.Append("\\u").Append(val.ToString("X4"));
@@ -781,7 +781,7 @@ namespace MultiplayerExtensions.Utilities
                                             string s = aJSON.Substring(i + 1, 4);
                                             Token.Append((char)int.Parse(
                                                 s,
-                                                System.Globalization.NumberStyles.AllowHexSpecifier));
+                                                NumberStyles.AllowHexSpecifier));
                                             i += 4;
                                             break;
                                         }
@@ -1280,7 +1280,7 @@ namespace MultiplayerExtensions.Utilities
 
             internal override void WriteToStringBuilder(StringBuilder aSB, int aIndent, int aIndentInc, JSONTextMode aMode)
             {
-                aSB.Append((m_Data) ? "true" : "false");
+                aSB.Append(m_Data ? "true" : "false");
             }
             public override bool Equals(object obj)
             {
@@ -1331,9 +1331,9 @@ namespace MultiplayerExtensions.Utilities
 
             public override bool Equals(object obj)
             {
-                if (object.ReferenceEquals(this, obj))
+                if (ReferenceEquals(this, obj))
                     return true;
-                return (obj is JSONNull);
+                return obj is JSONNull;
             }
             public override int GetHashCode()
             {
@@ -1402,7 +1402,7 @@ namespace MultiplayerExtensions.Utilities
             {
                 if (b == null)
                     return true;
-                return System.Object.ReferenceEquals(a, b);
+                return ReferenceEquals(a, b);
             }
 
             public static bool operator !=(JSONLazyCreator a, object b)
@@ -1414,7 +1414,7 @@ namespace MultiplayerExtensions.Utilities
             {
                 if (obj == null)
                     return true;
-                return System.Object.ReferenceEquals(this, obj);
+                return ReferenceEquals(this, obj);
             }
 
             public override int GetHashCode()

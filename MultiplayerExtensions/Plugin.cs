@@ -13,6 +13,8 @@ using BeatSaverSharp;
 using System.Diagnostics;
 using MultiplayerExtensions.UI;
 using BeatSaberMarkupLanguage.Settings;
+using MultiplayerExtensions.Utilities.Version;
+using MultiplayerExtensions.Utilities.Harmony;
 
 namespace MultiplayerExtensions
 {

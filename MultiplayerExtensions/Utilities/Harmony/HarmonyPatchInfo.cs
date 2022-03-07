@@ -2,7 +2,7 @@
 using System;
 using System.Reflection;
 
-namespace MultiplayerExtensions.Utilities
+namespace MultiplayerExtensions.Utilities.Harmony
 {
     public class HarmonyPatchInfo
     {
