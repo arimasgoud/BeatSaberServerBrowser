@@ -40,6 +40,7 @@
     <None Remove="UI\settings.bsml" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Accessibility" />
     <Reference Include="BeatmapCore">
       <HintPath>$(BeatSaberDir)\Beat Saber_Data\Managed\BeatmapCore.dll</HintPath>
       <Private>True</Private>
@@ -177,6 +178,7 @@
       <HintPath>$(BeatSaberDir)\Libs\0Harmony.dll</HintPath>
       <Private>True</Private>
       <SpecificVersion>False</SpecificVersion>
+      <Aliases>%(Aliases)</Aliases>
     </Reference>
     <Reference Include="BeatSaverSharp">
       <HintPath>$(BeatSaberDir)\Libs\BeatSaverSharp.dll</HintPath>
